@@ -41,6 +41,35 @@ let people: Array<AllType> = [
     {model: 'Tesla', year: 2022}
 ]
 
+///
+
+function sum(a: number, b: number): number {
+    return a + b
+}
+
+function sumLog(a: number, b: number): void {
+    console.log(a + b)
+}
+
+const toUpperCase = (strings: Array<string>): Array<string> => {
+    let result = strings.map((s) => s.toUpperCase())
+    return result
+}
+
+type CreateManType = {
+    name: string
+    height: number
+    age?: number
+}
+
+const createMan = (name: string, height: number): CreateManType => {
+    let age = 20
+    return {
+        name,
+        height,
+        age
+    }
+}
 
 
 
