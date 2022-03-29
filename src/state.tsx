@@ -1,7 +1,7 @@
 import React from "react";
 
-let a = 10
-a = 12
+// let a = 10
+// a = 12
 
 // types
 //
@@ -24,9 +24,24 @@ a = 12
 type ManType = {
     name: string
     age: number
+    height?: number
 }
 
-let b: ManType[] = [{name: 'Andre', age: 22}, {name: 'Victor', age: 21}]
+type CarType = {
+    model: string
+    year: number
+}
+
+type AllType = ManType | CarType
+
+
+let people: Array<AllType> = [
+    {name: 'Andre', age: 22, height: 182},
+    {name: 'Victor', age: 21},
+    {model: 'Tesla', year: 2022}
+]
+
+
 
 
 
