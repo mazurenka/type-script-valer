@@ -71,6 +71,28 @@ const createMan = (name: string, height: number): CreateManType => {
     }
 }
 
+///
+
+interface ICar {
+    model: string
+    year: number
+    on: boolean
+    turnOn: (on: boolean) => void
+    rename: (model: string) => void
+}
+
+let car: ICar = {
+    model: 'Tesla',
+    year: 2022,
+    on: false,
+    turnOn() {
+        this.on = true
+    },
+    rename(model) {
+        this.model = model
+    }
+}
+
 
 
 
