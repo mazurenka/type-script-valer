@@ -77,8 +77,8 @@ interface ICar {
     model: string
     year: number
     on: boolean
-    turnOn: (on: boolean) => void
-    rename: (model: string) => void
+    turnOn: () => void
+    rename: (model: string) => string
 }
 
 let car: ICar = {
@@ -90,6 +90,32 @@ let car: ICar = {
     },
     rename(model) {
         this.model = model
+        return this.model
+    }
+}
+
+//////////
+
+type CreateGarageType = {
+    addCar: (car: ICar) => void
+    logAllCarsNames: () => void
+    getAllCars: () => Array<ICar>
+}
+
+let createGarage = (): CreateGarageType => {
+    let _cars: Array<ICar> = []
+
+    return {
+        addCar(car) {
+            _cars.push(car)
+        },
+        logAllCarsNames() {
+            console.log('Cars in the garage: ')
+            _cars.forEach(c => console.log(c.model))
+        },
+        getAllCars() {
+            return _cars
+        }
     }
 }
 
